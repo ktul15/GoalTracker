@@ -1,0 +1,5 @@
+<h1>My Goals</h1>
+
+<% allGoals.forEach((goal) => { %>
+    <p><%= goal.task %> - <%= goal.deadline.toDateString() %></p>
+<% }) %>
