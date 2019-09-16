@@ -1,0 +1,14 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segmment">
+    <div class="ui huge header">
+        <%= foundGoal.name %>
+    </div>
+    <div class="content">
+        <%= foundGoal.deadline.toDateString() %>
+    </div>
+    
+</div>
+
+
+<% include partials/footer.ejs %>

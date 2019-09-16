@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        New Goal
+    </div>
+    <form class="ui form" action="/goals" method="POST">
+        <div class="field">
+            <label for="">Enter a new Goal:</label>
+            <input type="text" name="goal[name]" placeholder="Enter a new goal" min="100">
+        </div>
+        <div class="field">
+            <label for="">Enter Deadline:</label>
+            <input type="date" name="goal[deadline]" placeholder="Enter deadline" max="20">
+        </div>
+        <button type="submit" class="ui button basic big">Submit</button>
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

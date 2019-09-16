@@ -1,0 +1,18 @@
+<% include partials/header.ejs %>
+
+<div class="ui main container segment">
+    <form class="ui form" action="/goals/<%= goal._id %>?method=PUT" method="POST">
+        <div class="field">
+            <label for="">Enter a new Goal:</label>
+            <input type="text" name="goal[name]" value="<%= goal.name %>">
+        </div>
+        <div class="field">
+            <label for="">Enter Deadline:</label>
+            <input type="date" name="goal[deadline]" value="<%= goal.deadline.toISOString().substr(0,10) %>">
+        </div>
+        <button type="submit" class="ui button basic violet">Submit</button>
+    </form>
+</div>
+
+
+<% include partials/footer.ejs %>

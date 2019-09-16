@@ -1,5 +1,31 @@
-<h1>My Goals</h1>
+<% include partials/header.ejs %>
 
-<% allGoals.forEach((goal) => { %>
-    <p><%= goal.task %> - <%= goal.deadline.toDateString() %></p>
-<% }) %>
+<div class="ui main container text">
+    <div class="ui huge header">
+        My Goals
+    </div>
+
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% allGoals.forEach((goal) => { %>
+                <div class="item">
+                    <div class="content">
+                        <a href="/goals/<%= goal._id %>" class="header"><%= goal.name %></a>
+                        <div class="meta">
+                            <span><%= goal.deadline.toDateString() %></span>
+                        </div>
+                        <a href="/goals/<%= goal._id %>/edit" class="ui basic button primary">Edit</a>
+                        <form action="/goals/<%= goal._id %>?_method=DELETE" method="POST" id="delete">
+                            <button type="submit" class="ui basic button red">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    
+        
+</div>
+
+<% include partials/footer.ejs %>
+
